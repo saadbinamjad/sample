@@ -15,9 +15,8 @@ class MotionController extends Controller
      */
     public function index()
     {
-        $motions = \App\Motion::all();
-        return view('motion/motion')->with(['motions', $motions]);
-
+        $motions = \App\Motion::paginate(6);
+        return view('motion/motion', compact('motions'));
 
     }
 
@@ -28,7 +27,10 @@ class MotionController extends Controller
      */
     public function create()
     {
-        return view('motion/motion');
+        $rounds = \App\Round::all();
+        $tournaments = \App\Tournament::all();
+        return view('motion/motion-create', compact('rounds', 'tournaments'));
+
     }
 
     /**
@@ -37,9 +39,17 @@ class MotionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, \App\Motion $motion)
     {
-        //
+        $motion->motion = $request->name;
+        $motion->round_id = $request->round;
+        $motion->tournament_id = $request->tournament;
+        $motion->user_id = 1;
+        $motion->status = 1;
+        
+        $motion->save();
+
+        return redirect('/motion')->with('status', 'Motion added!');;
     }
 
     /**

@@ -77,6 +77,14 @@
         </div>
     </nav>
 
+    <div>
+    @if (session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+    @endif
+    </div>
+
     @yield('content')
 
     <!-- Scripts -->

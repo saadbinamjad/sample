@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Motion extends Model
 {
+	
     public function user(){
     	$this->belongsTo(User::class);
     }
