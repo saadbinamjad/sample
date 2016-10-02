@@ -43,10 +43,10 @@ class AddFksToMotionsTable extends Migration
      */
     public function down()
     {
-        Schema::table('motions', function(Bluepring $table){
+        Schema::table('motions', function(Blueprint $table){
             $table->dropForeign('fk_user_id_motions_id_users');
             $table->dropForeign('fk_tourn_id_motions_id_tourn');
-            $table->dropForeign('fk_user_id_motions_id_users');
+            $table->dropForeign('fk_round_id_motions_id_rounds');
              
         });
     }

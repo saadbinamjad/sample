@@ -30,7 +30,7 @@ class AddFksToTournamentsTable extends Migration
      */
     public function down()
     {
-         Schema::table('tournaments', function(Bluepring $table){
+         Schema::table('tournaments', function(Blueprint $table){
             $table->dropForeign('fk_host_institution_id_tourn_id_hosts');
         });
     }

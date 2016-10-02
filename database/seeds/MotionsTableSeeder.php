@@ -11,6 +11,6 @@ class MotionsTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        return factory(App\Motion::class, 5)->create();
     }
 }

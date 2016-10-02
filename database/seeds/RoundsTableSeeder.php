@@ -11,6 +11,6 @@ class RoundsTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        return factory(App\Round::class, 5)->create();
     }
 }

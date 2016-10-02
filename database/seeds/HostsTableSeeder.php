@@ -11,6 +11,6 @@ class HostsTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        return factory(App\Host::class, 5)->create();
     }
 }

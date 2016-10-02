@@ -17,8 +17,8 @@ class CreateRoundsTable extends Migration
             $table->increments('id');
             $table->string('round');
             $table->integer('status');
-            $table->integer('created_by');
-            $table->integer('updated_by');
+            $table->integer('created_by')->nullable();;
+            $table->integer('updated_by')->nullable();;
             $table->timestamps();
         });
     }

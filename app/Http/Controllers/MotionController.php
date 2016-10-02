@@ -15,7 +15,10 @@ class MotionController extends Controller
      */
     public function index()
     {
-        return \App\Motion::all();
+        $motions = \App\Motion::all();
+        return view('motion/motion')->with(['motions', $motions]);
+
+
     }
 
     /**
@@ -25,7 +28,7 @@ class MotionController extends Controller
      */
     public function create()
     {
-        //
+        return view('motion/motion');
     }
 
     /**

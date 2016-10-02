@@ -11,6 +11,6 @@ class TournamentsTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        return factory(App\Tournament::class, 5)->create();
     }
 }

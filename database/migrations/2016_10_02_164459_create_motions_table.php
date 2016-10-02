@@ -20,8 +20,8 @@ class CreateMotionsTable extends Migration
             $table->integer('tournament_id')->unsigned()->index();
             $table->integer('user_id')->unsigned()->index();
             $table->integer('status');
-            $table->integer('created_by');
-            $table->integer('updated_by');
+            $table->integer('created_by')->nullable();
+            $table->integer('updated_by')->nullable();;
             $table->timestamps();
         });
     }
