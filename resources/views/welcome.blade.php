@@ -77,6 +77,28 @@
                 <div class="title m-b-md">
                     bddebate
                 </div>
+                <div class="title m-b-md">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/search') }}">
+                        {{ csrf_field() }}
+
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                        
+
+                            <div class="col-md-6">
+                                <input id="search" name="search" value="{{ old('email') }}" required autofocus>
+
+                             </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-8 col-md-offset-4">
+                                <button type="submit" class="btn btn-primary">
+                                    Search
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
 
                 <div class="links">
                     <a href="{{ url('/user')}}">Users</a>

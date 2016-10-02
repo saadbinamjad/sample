@@ -28,3 +28,6 @@ Route::resource('/round', 'RoundController');
 Route::resource('/tournament', 'TournamentController');
 
 Route::resource('/host', 'HostController');
+
+Route::resource('/search', 'SearchController');
+
