@@ -23,6 +23,10 @@ Route::resource('/user', 'UserController');
 
 Route::resource('/motion', 'MotionController');
 
+Route::get('/motion/create', 'MotionController@create')->middleware('auth');
+
+
+
 Route::resource('/round', 'RoundController');
 
 Route::resource('/tournament', 'TournamentController');

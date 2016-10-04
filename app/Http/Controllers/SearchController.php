@@ -44,7 +44,7 @@ class SearchController extends Controller
         
         $tournaments = \App\Tournament::where('name', 'LIKE', '%'.$searchItem.'%')->get();
 
-        return view('search.result', compact('motions', 'users', 'tournaments'));
+        return view('search.result', compact('motions', 'users', 'tournaments', 'searchItem'));
 
     }
 
