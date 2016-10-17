@@ -9,6 +9,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
         <!-- Styles -->
         <style>
@@ -77,21 +78,21 @@
                 <div class="title m-b-md">
                     bddebate
                 </div>
-                <div class="title m-b-md">
+                <div class="m-b-md">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/search') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                         
 
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <input id="search" name="search" value="{{ old('email') }}" required autofocus>
 
                              </div>
                         </div>
                         <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
+                            <div class="col-md-12">
+                                <button type="submit" class="btn btn-success">
                                     Search
                                 </button>
                             </div>

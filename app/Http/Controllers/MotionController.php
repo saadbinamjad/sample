@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
+use Illuminate\Support\Facades\Validator;
 
 class MotionController extends Controller
 {
@@ -41,6 +41,18 @@ class MotionController extends Controller
      */
     public function store(Request $request, \App\Motion $motion)
     {
+        $validator = Validator::make($request->all(),[
+            'round' => 'required|int',
+            'tournament' => 'required|int',
+        ]);
+        
+        if($validator->fails()){
+            return redirect('/motion')
+             // return Redirect::back()
+                ->withInput()
+                ->withErrors($validator);
+        }
+        
         $motion->motion = $request->name;
         $motion->round_id = $request->round;
         $motion->tournament_id = $request->tournament;
