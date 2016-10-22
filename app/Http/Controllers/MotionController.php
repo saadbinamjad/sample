@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Validator;
-
+use Redirect;
 class MotionController extends Controller
 {
     /**
@@ -47,9 +47,7 @@ class MotionController extends Controller
         ]);
         
         if($validator->fails()){
-            return redirect('/motion')
-             // return Redirect::back()
-                ->withInput()
+            return Redirect::back()->withInput()
                 ->withErrors($validator);
         }
         
